@@ -11,6 +11,7 @@ Live at: **https://wenjiehuangwayne.github.io**
 ```
 index.html        Home — bio, research interests, selected works, contact
 research.html     Publications (3 categories) + research grants + service
+teaching.html     Courses (DATA8007, DASE7001) + guest lectures
 group.html        Ph.D. students, RAs, MSc/UG researchers
 talks.html        Invited talks and seminars (grouped by talk title)
 miscellaneous.html  Chinese calligraphy, illustration design and graffiti
