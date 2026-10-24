@@ -52,6 +52,21 @@
     if (img.complete) show();
   })();
 
+  /* ---------- Artwork images (optional, same trick as the photo) ---------- */
+  (function () {
+    Array.prototype.forEach.call(document.querySelectorAll("[data-art]"), function (img) {
+      var ph = img.parentNode.querySelector(".art-ph");
+      function show() {
+        if (!img.naturalWidth) return;
+        img.hidden = false;
+        if (ph) ph.style.display = "none";
+      }
+      img.addEventListener("load", show);
+      img.addEventListener("error", function () { img.hidden = true; });
+      if (img.complete) show();
+    });
+  })();
+
   /* ---------- Publication filter / search ---------- */
   var search = document.getElementById("pub-search");
   var chips = Array.prototype.slice.call(document.querySelectorAll(".chip[data-filter]"));

@@ -12,8 +12,8 @@ Live at: **https://wenjiehuangwayne.github.io**
 index.html        Home — bio, research interests, selected works, contact
 research.html     Publications (3 categories) + research grants + service
 group.html        Ph.D. students, RAs, MSc/UG researchers
-talks.html        Invited talks and seminars
-experience.html   Academic employment, education, industry experience
+talks.html        Invited talks and seminars (grouped by talk title)
+miscellaneous.html  Chinese calligraphy, illustration design and graffiti
 assets/style.css  All styling (light/dark theme)
 assets/main.js    Theme toggle + publication filter/search
 assets/favicon.svg
@@ -36,6 +36,16 @@ masthead photo fallback, which is fine.
 Save a square-ish photo as **`assets/img/profile.jpg`** and refresh. The site detects it
 automatically and swaps the "WH" monogram for the picture. If the file is missing, the
 monogram stays — no broken image icon.
+
+### Artwork images (Miscellaneous page)
+
+Drop images into `assets/img/works/` using these filenames; each appears automatically,
+and until then the card shows a title placeholder:
+
+```
+genesis.jpg  cross.jpg  sjtu-graffiti.jpg  pour-out.jpg
+as-a-deer.jpg  john-15-5.jpg  first-exhibition.jpg
+```
 
 To use a different filename/extension, edit the `src` in the `avatar-slot` block of each
 HTML file (5 occurrences):
