@@ -71,16 +71,16 @@ a:hover { text-decoration: underline; }
   padding: 40px 0 32px;
 }
 /* circular avatar, fixed size (1/3 of the previous stretched diameter) */
-.avatar-slot { flex: 0 0 210px; }
+.avatar-slot { flex: 0 0 300px; }
 .avatar {
-  width: 210px; height: 210px; border-radius: 50%;
+  width: 300px; height: 300px; border-radius: 50%;
   object-fit: cover; object-position: center 22%;
   background: var(--surface-2);
   border: 1px solid var(--border); display: block;
 }
 .avatar[hidden] { display: none; }
 .avatar-placeholder {
-  width: 210px; height: 210px; border-radius: 50%;
+  width: 300px; height: 300px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   background: var(--accent-soft); color: var(--accent);
   font-family: var(--serif); font-size: 64px; letter-spacing: 1px;
