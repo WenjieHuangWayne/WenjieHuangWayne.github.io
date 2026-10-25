@@ -309,6 +309,7 @@ footer a { color: var(--link); }
   .avatar-slot { flex: 0 0 auto; width: 168px; align-self: center; }
   .avatar, .avatar-placeholder { width: 168px; height: 168px; min-height: 0; border-radius: 50%; }
   .avatar-placeholder { font-size: 48px; }
+  .masthead-text { width: 100%; }
   .masthead h1 { font-size: 28px; }
   .contact { justify-content: center; }
   .badges { justify-content: center; }
