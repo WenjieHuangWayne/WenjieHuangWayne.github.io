@@ -70,18 +70,18 @@ a:hover { text-decoration: underline; }
   display: flex; gap: 28px; align-items: flex-start;
   padding: 40px 0 32px;
 }
-.avatar-slot { flex: 0 0 132px; }
+.avatar-slot { flex: 0 0 168px; }
 .avatar {
-  width: 132px; height: 132px; border-radius: 50%;
+  width: 168px; height: 168px; border-radius: 50%;
   object-fit: cover; background: var(--surface-2);
   border: 1px solid var(--border); display: block;
 }
 .avatar[hidden] { display: none; }
 .avatar-placeholder {
-  width: 132px; height: 132px; border-radius: 50%;
+  width: 168px; height: 168px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   background: var(--accent-soft); color: var(--accent);
-  font-family: var(--serif); font-size: 40px; letter-spacing: 1px;
+  font-family: var(--serif); font-size: 50px; letter-spacing: 1px;
   border: 1px solid var(--border); user-select: none;
 }
 .masthead-text { flex: 1 1 auto; min-width: 0; }
