@@ -67,25 +67,23 @@ a:hover { text-decoration: underline; }
   background: var(--surface);
 }
 .masthead-inner {
-  display: flex; gap: 30px; align-items: stretch;
+  display: flex; gap: 26px; align-items: flex-start;
   padding: 40px 0 32px;
 }
-/* circular avatar, height follows the text block on the right */
-.avatar-slot { flex: 0 0 auto; align-self: stretch; }
+/* circular avatar, fixed size (1/3 of the previous stretched diameter) */
+.avatar-slot { flex: 0 0 84px; }
 .avatar {
-  height: 100%; width: auto; aspect-ratio: 1 / 1; min-height: 210px;
-  border-radius: 50%;
-  object-fit: cover; object-position: center 25%;
+  width: 84px; height: 84px; border-radius: 50%;
+  object-fit: cover; object-position: center 22%;
   background: var(--surface-2);
   border: 1px solid var(--border); display: block;
 }
 .avatar[hidden] { display: none; }
 .avatar-placeholder {
-  height: 100%; width: auto; aspect-ratio: 1 / 1; min-height: 210px;
-  border-radius: 50%;
+  width: 84px; height: 84px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   background: var(--accent-soft); color: var(--accent);
-  font-family: var(--serif); font-size: 54px; letter-spacing: 1px;
+  font-family: var(--serif); font-size: 26px; letter-spacing: 1px;
   border: 1px solid var(--border); user-select: none;
 }
 .masthead-text { flex: 1 1 auto; min-width: 0; }
@@ -305,10 +303,8 @@ footer a { color: var(--link); }
 /* ---------- Responsive ---------- */
 @media (max-width: 720px) {
   .masthead-inner { flex-direction: column; align-items: center; text-align: center; padding: 28px 0 24px; }
-  /* stacked layout: give the portrait a fixed square again */
-  .avatar-slot { flex: 0 0 auto; width: 168px; align-self: center; }
-  .avatar, .avatar-placeholder { width: 168px; height: 168px; min-height: 0; border-radius: 50%; }
-  .avatar-placeholder { font-size: 48px; }
+  /* stacked layout: same 84px circle, centred */
+  .avatar-slot { flex: 0 0 auto; align-self: center; }
   .masthead-text { width: 100%; }
   .masthead h1 { font-size: 28px; }
   .contact { justify-content: center; }
