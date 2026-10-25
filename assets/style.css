@@ -206,7 +206,11 @@ html.js ol.pubs > li::before { content: "[" var(--n) "]"; }
 .pub-title { font-weight: 600; }
 .pub-authors { color: var(--muted); font-size: 14.5px; }
 .pub-venue { font-size: 14.5px; }
-.pub-venue em { font-style: italic; }
+.pub-venue em {
+  font-style: italic; font-weight: 700;
+  color: #0d8be0;                      /* azure */
+}
+[data-theme="dark"] .pub-venue em { color: #74bdf5; }
 .pub-meta { font-size: 13.5px; color: var(--muted); margin-top: 3px; }
 .pub-links { display: inline-flex; gap: 10px; margin-left: 6px; font-size: 13px; }
 .tag {
@@ -318,4 +322,6 @@ footer a { color: var(--link); }
   .nav, .theme-toggle, .pub-tools, footer { display: none !important; }
   body { font-size: 12pt; }
   a { color: #000; text-decoration: none; }
+  .pub-venue em { color: #000; }
+  .pub-venue em { color: #000; }
 }
