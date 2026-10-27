@@ -237,6 +237,7 @@ ul.plain > li:last-child { border-bottom: 0; }
 
 ul.ticks { margin: 0 0 12px; padding-left: 22px; }
 ul.ticks li { margin-bottom: 6px; }
+.service-line { margin: 0 0 14px; font-size: 15px; line-height: 1.75; }
 
 .grant-role {
   display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: .3px;
