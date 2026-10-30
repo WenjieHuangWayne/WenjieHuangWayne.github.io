@@ -224,6 +224,8 @@ a.pub-title { color: inherit; text-decoration: none; border-bottom: 1px dotted v
 a.pub-title:hover { color: var(--accent); border-bottom-color: var(--accent); }
 a.tag { text-decoration: none; }
 a.tag:hover { background: var(--accent-soft); color: var(--accent); }
+a.tag.award:hover { background: #f8e3b6; color: #7a4f00; }
+[data-theme="dark"] a.tag.award:hover { background: #40320f; color: #f0d09a; }
 
 /* ---------- People / grants / talks lists ---------- */
 ul.plain { list-style: none; margin: 0 0 12px; padding: 0; }
