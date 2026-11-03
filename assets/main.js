@@ -96,7 +96,7 @@
       Array.prototype.forEach.call(list.children, function (li) {
         if (li.style.display === "none") return;
         n++;
-        li.style.setProperty("--n", n);
+        li.style.setProperty("--n", '"' + n + '"');
       });
     });
 
