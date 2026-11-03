@@ -90,12 +90,14 @@
       if (show) visible++;
     });
 
-    // renumber visible entries
-    var n = 0;
-    items.forEach(function (li) {
-      if (li.style.display === "none") return;
-      n++;
-      li.style.setProperty("--n", n);
+    // renumber visible entries (numbering restarts in each list)
+    Array.prototype.forEach.call(document.querySelectorAll("ol.pubs"), function (list) {
+      var n = 0;
+      Array.prototype.forEach.call(list.children, function (li) {
+        if (li.style.display === "none") return;
+        n++;
+        li.style.setProperty("--n", n);
+      });
     });
 
     // hide empty section headings
