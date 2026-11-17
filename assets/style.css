@@ -284,9 +284,7 @@ footer {
 }
 footer .wrap { display: flex; flex-wrap: wrap; gap: 10px 24px; justify-content: space-between; }
 footer a { color: var(--link); }
-footer .visit { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; letter-spacing: .02em; }
-footer .visit img { height: 26px; vertical-align: middle; opacity: .9; }
-footer .visit img:hover { opacity: 1; }
+footer #busuanzi_container_site_uv { margin-left: 4px; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 720px) {
