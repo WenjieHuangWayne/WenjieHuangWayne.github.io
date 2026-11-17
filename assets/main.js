@@ -143,9 +143,7 @@
   var BASE = "https://abacus.jasoncameron.dev";
   var SESSION_KEY = "wh-visit-counted";
 
-  function fmt(n) {
-    return Number(n).toLocaleString("en-US");
-  }
+  function fmt(n) { return Number(n).toLocaleString("en-US"); }
 
   function paint(el, value) {
     var slot = el.querySelector(".stat-num");
@@ -154,21 +152,36 @@
     el.hidden = false;
   }
 
+  // The counter service is a small hobby endpoint and occasionally answers 5xx,
+  // so give it one retry before giving up (the number simply stays hidden).
+  function ask(path, key, tries) {
+    tries = tries || 0;
+    return fetch(BASE + path + NS + "/" + key, { cache: "no-store" })
+      .then(function (r) {
+        if (!r.ok) throw new Error("HTTP " + r.status);
+        return r.json();
+      })
+      .then(function (d) {
+        if (!d || d.value == null) throw new Error("no value");
+        return d.value;
+      })
+      .catch(function (err) {
+        if (tries < 1) {
+          return new Promise(function (res) { setTimeout(res, 700); })
+            .then(function () { return ask(path, key, tries + 1); });
+        }
+        throw err;
+      });
+  }
+
   // Page views: count every load of any page on the site.
-  fetch(BASE + "/hit/" + NS + "/pageviews", { cache: "no-store" })
-    .then(function (r) { return r.json(); })
-    .then(function (d) { if (d && d.value != null) paint(pv, d.value); })
-    .catch(function () { /* counter unreachable: leave hidden */ });
+  ask("/hit/", "pageviews").then(function (v) { paint(pv, v); }).catch(function () {});
 
   // Visitors: count once per browser session.
   var seen = false;
   try { seen = sessionStorage.getItem(SESSION_KEY) === "1"; } catch (e) {}
-  fetch(BASE + (seen ? "/get/" : "/hit/") + NS + "/visitors", { cache: "no-store" })
-    .then(function (r) { return r.json(); })
-    .then(function (d) {
-      if (!d || d.value == null) return;
-      paint(uv, d.value);
-      if (!seen) { try { sessionStorage.setItem(SESSION_KEY, "1"); } catch (e) {} }
-    })
-    .catch(function () { /* counter unreachable: leave hidden */ });
+  ask(seen ? "/get/" : "/hit/", "visitors").then(function (v) {
+    paint(uv, v);
+    if (!seen) { try { sessionStorage.setItem(SESSION_KEY, "1"); } catch (e) {} }
+  }).catch(function () {});
 })();
