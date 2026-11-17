@@ -133,34 +133,32 @@
   apply();
 })();
 
-/* ---------- Footer visit stats (plain numbers, Abacus counter API) ---------- */
+/* ---------- Footer visit stats (plain number, Abacus counter API) ---------- */
 (function () {
   var pv = document.getElementById("stat-pv");
-  var uv = document.getElementById("stat-uv");
-  if (!pv || !uv) return;
+  if (!pv) return;
 
   var NS = "wenjiehuangwayne-github-io";
   var BASE = "https://abacus.jasoncameron.dev";
-  var SESSION_KEY = "wh-visit-counted";
 
   function fmt(n) { return Number(n).toLocaleString("en-US"); }
 
-  function paint(el, value) {
-    var slot = el.querySelector(".stat-num");
+  function paint(value) {
+    var slot = pv.querySelector(".stat-num");
     if (!slot) return;
     slot.textContent = fmt(value);
-    el.hidden = false;
+    pv.hidden = false;
   }
 
   // The counter service is a small hobby endpoint and occasionally answers 5xx,
   // so give it one retry before giving up (the number simply stays hidden).
-  function ask(path, key, tries) {
+  function ask(tries) {
     tries = tries || 0;
     var ctl = typeof AbortController === "function" ? new AbortController() : null;
     var timer = ctl ? setTimeout(function () { ctl.abort(); }, 5000) : null;
     var opts = { cache: "no-store" };
     if (ctl) opts.signal = ctl.signal;
-    return fetch(BASE + path + NS + "/" + key, opts)
+    return fetch(BASE + "/hit/" + NS + "/pageviews", opts)
       .then(function (r) {
         if (timer) clearTimeout(timer);
         if (!r.ok) throw new Error("HTTP " + r.status);
@@ -174,20 +172,11 @@
         if (timer) clearTimeout(timer);
         if (tries < 1) {
           return new Promise(function (res) { setTimeout(res, 700); })
-            .then(function () { return ask(path, key, tries + 1); });
+            .then(function () { return ask(tries + 1); });
         }
         throw err;
       });
   }
 
-  // Page views: count every load of any page on the site.
-  ask("/hit/", "pageviews").then(function (v) { paint(pv, v); }).catch(function () {});
-
-  // Visitors: count once per browser session.
-  var seen = false;
-  try { seen = sessionStorage.getItem(SESSION_KEY) === "1"; } catch (e) {}
-  ask(seen ? "/get/" : "/hit/", "visitors").then(function (v) {
-    paint(uv, v);
-    if (!seen) { try { sessionStorage.setItem(SESSION_KEY, "1"); } catch (e) {} }
-  }).catch(function () {});
+  ask().then(paint).catch(function () { /* unreachable: keep hidden */ });
 })();
