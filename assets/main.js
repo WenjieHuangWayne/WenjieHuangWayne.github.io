@@ -156,8 +156,13 @@
   // so give it one retry before giving up (the number simply stays hidden).
   function ask(path, key, tries) {
     tries = tries || 0;
-    return fetch(BASE + path + NS + "/" + key, { cache: "no-store" })
+    var ctl = typeof AbortController === "function" ? new AbortController() : null;
+    var timer = ctl ? setTimeout(function () { ctl.abort(); }, 5000) : null;
+    var opts = { cache: "no-store" };
+    if (ctl) opts.signal = ctl.signal;
+    return fetch(BASE + path + NS + "/" + key, opts)
       .then(function (r) {
+        if (timer) clearTimeout(timer);
         if (!r.ok) throw new Error("HTTP " + r.status);
         return r.json();
       })
@@ -166,6 +171,7 @@
         return d.value;
       })
       .catch(function (err) {
+        if (timer) clearTimeout(timer);
         if (tries < 1) {
           return new Promise(function (res) { setTimeout(res, 700); })
             .then(function () { return ask(path, key, tries + 1); });
