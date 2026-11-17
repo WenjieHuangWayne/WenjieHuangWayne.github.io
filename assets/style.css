@@ -284,7 +284,7 @@ footer {
 }
 footer .wrap { display: flex; flex-wrap: wrap; gap: 10px 24px; justify-content: space-between; }
 footer a { color: var(--link); }
-footer #busuanzi_container_site_uv { margin-left: 4px; }
+footer .visit .stat-num { font-variant-numeric: tabular-nums; color: var(--text, inherit); font-weight: 600; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 720px) {

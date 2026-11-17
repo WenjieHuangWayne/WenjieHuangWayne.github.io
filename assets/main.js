@@ -132,3 +132,43 @@
 
   apply();
 })();
+
+/* ---------- Footer visit stats (plain numbers, Abacus counter API) ---------- */
+(function () {
+  var pv = document.getElementById("stat-pv");
+  var uv = document.getElementById("stat-uv");
+  if (!pv || !uv) return;
+
+  var NS = "wenjiehuangwayne-github-io";
+  var BASE = "https://abacus.jasoncameron.dev";
+  var SESSION_KEY = "wh-visit-counted";
+
+  function fmt(n) {
+    return Number(n).toLocaleString("en-US");
+  }
+
+  function paint(el, value) {
+    var slot = el.querySelector(".stat-num");
+    if (!slot) return;
+    slot.textContent = fmt(value);
+    el.hidden = false;
+  }
+
+  // Page views: count every load of any page on the site.
+  fetch(BASE + "/hit/" + NS + "/pageviews", { cache: "no-store" })
+    .then(function (r) { return r.json(); })
+    .then(function (d) { if (d && d.value != null) paint(pv, d.value); })
+    .catch(function () { /* counter unreachable: leave hidden */ });
+
+  // Visitors: count once per browser session.
+  var seen = false;
+  try { seen = sessionStorage.getItem(SESSION_KEY) === "1"; } catch (e) {}
+  fetch(BASE + (seen ? "/get/" : "/hit/") + NS + "/visitors", { cache: "no-store" })
+    .then(function (r) { return r.json(); })
+    .then(function (d) {
+      if (!d || d.value == null) return;
+      paint(uv, d.value);
+      if (!seen) { try { sessionStorage.setItem(SESSION_KEY, "1"); } catch (e) {} }
+    })
+    .catch(function () { /* counter unreachable: leave hidden */ });
+})();
