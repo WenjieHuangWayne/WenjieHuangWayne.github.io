@@ -289,6 +289,7 @@ footer a { color: var(--link); }
   src: url("fonts/vt323-latin.woff2") format("woff2");
   font-weight: 400; font-style: normal; font-display: swap;
 }
+footer .visit-group { display: inline-flex; align-items: baseline; gap: 5px; }
 footer .visit #busuanzi_value_site_pv,
 footer .visit #busuanzi_value_site_uv {
   font-family: "PixelDigits", ui-monospace, monospace;
