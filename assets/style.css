@@ -291,7 +291,7 @@ footer a { color: var(--link); }
 }
 footer .visit #busuanzi_value_site_pv {
   font-family: "PixelDigits", ui-monospace, monospace;
-  font-size: 15.5px; letter-spacing: .03em; color: var(--text);
+  font-size: 16.5px; letter-spacing: .03em; color: var(--text);
   font-variant-numeric: tabular-nums; vertical-align: -1px;
 }
 footer .visit .stat-num { font-variant-numeric: tabular-nums; color: var(--text, inherit); font-weight: 600; }
