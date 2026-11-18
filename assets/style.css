@@ -284,6 +284,16 @@ footer {
 }
 footer .wrap { display: flex; flex-wrap: wrap; gap: 10px 24px; justify-content: space-between; }
 footer a { color: var(--link); }
+@font-face {
+  font-family: "PixelDigits";
+  src: url("fonts/press-start-2p-latin.woff2") format("woff2");
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+footer .visit #busuanzi_value_site_pv {
+  font-family: "PixelDigits", ui-monospace, monospace;
+  font-size: 14px; letter-spacing: .04em; color: var(--text);
+  font-variant-numeric: tabular-nums; vertical-align: -1px;
+}
 footer .visit .stat-num { font-variant-numeric: tabular-nums; color: var(--text, inherit); font-weight: 600; }
 
 /* ---------- Responsive ---------- */
