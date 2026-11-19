@@ -183,6 +183,14 @@ p { margin: 0 0 14px; }
 }
 .pub-search:focus { outline: 2px solid var(--accent-soft); border-color: var(--accent); }
 .filters { display: flex; flex-wrap: wrap; gap: 8px; }
+.filters-type { padding-left: 12px; border-left: 1px solid var(--border); }
+.pubs .pub-why {
+  display: block;
+  color: var(--muted);
+  font-size: 14.5px;
+  margin-top: 3px;
+  line-height: 1.5;
+}
 .chip {
   font-size: 13.5px; padding: 6px 13px; border-radius: 999px; cursor: pointer;
   border: 1px solid var(--border); background: var(--surface); color: var(--muted);

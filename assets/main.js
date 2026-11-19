@@ -70,22 +70,29 @@
   /* ---------- Publication filter / search ---------- */
   var search = document.getElementById("pub-search");
   var chips = Array.prototype.slice.call(document.querySelectorAll(".chip[data-filter]"));
+  var typeChips = Array.prototype.slice.call(document.querySelectorAll(".chip[data-typefilter]"));
   var items = Array.prototype.slice.call(document.querySelectorAll("ol.pubs > li"));
   if (!items.length) return;
   document.documentElement.classList.add("js");
 
   function norm(s) { return (s || "").toLowerCase(); }
 
+  function activeValue(group, attr) {
+    var pressed = group.filter(function (c) { return c.getAttribute("aria-pressed") === "true"; })[0];
+    return pressed ? pressed.getAttribute(attr) : null;
+  }
+
   function apply() {
     var q = norm(search ? search.value.trim() : "");
-    var activeChip = chips.filter(function (c) { return c.getAttribute("aria-pressed") === "true"; })[0];
-    var cat = activeChip ? activeChip.getAttribute("data-filter") : "all";
+    var cat = activeValue(chips, "data-filter") || "all";
+    var type = activeValue(typeChips, "data-typefilter") || "any";
 
     var visible = 0;
     items.forEach(function (li) {
       var okCat = cat === "all" || li.getAttribute("data-cat") === cat;
+      var okType = type === "any" || li.getAttribute("data-type") === type;
       var okQ = !q || norm(li.textContent).indexOf(q) !== -1;
-      var show = okCat && okQ;
+      var show = okCat && okType && okQ;
       li.style.display = show ? "" : "none";
       if (show) visible++;
     });
@@ -114,6 +121,14 @@
   chips.forEach(function (chip) {
     chip.addEventListener("click", function () {
       chips.forEach(function (c) { c.setAttribute("aria-pressed", "false"); });
+      chip.setAttribute("aria-pressed", "true");
+      apply();
+    });
+  });
+
+  typeChips.forEach(function (chip) {
+    chip.addEventListener("click", function () {
+      typeChips.forEach(function (c) { c.setAttribute("aria-pressed", "false"); });
       chip.setAttribute("aria-pressed", "true");
       apply();
     });

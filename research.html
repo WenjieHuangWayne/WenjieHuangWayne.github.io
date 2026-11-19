@@ -6,7 +6,7 @@
 <title>Research — Wenjie HUANG</title>
 <meta name="description" content="Publications, working papers and research grants of Wenjie Huang (HKU DASE / IDS): risk analytics and robust optimization, sequential decision-making, data science/AI for operations management.">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="assets/style.css?v=20261119f">
+<link rel="stylesheet" href="assets/style.css?v=20261120a">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -83,11 +83,16 @@
 
   <div class="pub-tools">
     <input class="pub-search" id="pub-search" type="search" placeholder="Filter by keyword, author or venue… (press /)" aria-label="Search publications">
-    <div class="filters">
+    <div class="filters" role="group" aria-label="Filter by research theme">
       <button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>
       <button class="chip" type="button" data-filter="risk" aria-pressed="false">Risk &amp; Robust Optimization</button>
       <button class="chip" type="button" data-filter="seq" aria-pressed="false">Sequential Decision-Making</button>
       <button class="chip" type="button" data-filter="om" aria-pressed="false">OM &amp; Social Good</button>
+    </div>
+    <div class="filters filters-type" role="group" aria-label="Filter by contribution type">
+      <button class="chip" type="button" data-typefilter="any" aria-pressed="true">All types</button>
+      <button class="chip" type="button" data-typefilter="theory" aria-pressed="false">Theory &amp; Methods</button>
+      <button class="chip" type="button" data-typefilter="applied" aria-pressed="false">Applications</button>
     </div>
     <span class="when" id="pub-count"></span>
   </div>
@@ -95,128 +100,128 @@
   <section data-section>
     <h3>Journal Articles</h3>
     <ol class="pubs">
-      <li data-cat="risk">
+      <li data-type="theory" data-cat="risk">
         <a class="pub-title" href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7685467">"Assortment optimization under the nested logit model with product-level utility uncertainties and operational constraints"</a>
         <span class="pub-authors">(with Hao Yin),</span>
         <span class="pub-venue">under review, <em>Operations Research Letters</em>, 2026.</span>
       </li>
-      <li data-cat="risk">
+      <li data-type="applied" data-cat="risk">
         <a class="pub-title" href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7685607">"Target-oriented bi-level optimization for recycling subsidy design"</a>
         <span class="pub-authors">(with Yao Gao, Ling Jian and Lianmin Zhang),</span>
         <span class="pub-venue">under review, <em>European Journal of Operational Research</em>, 2026.</span>
       </li>
-      <li data-cat="risk">
+      <li data-type="theory" data-cat="risk">
         <a class="pub-title" href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5053496">"Optimal partial centralization under decentralized self-selection and processing bottlenecks"</a>
         <span class="pub-authors">(with Xiaobo Li, Yinuo Lin and Lei Xu),</span>
         <span class="pub-venue">under review, <em>Manufacturing &amp; Service Operations Management</em>, 2026.</span>
         <a class="tag award" href="https://durhamworkshop.webspace.durham.ac.uk/program/">Accepted for 2025 Durham Early Career Scholars Professional Development Workshop: Operations and Analytics, Supply Chain Management Track</a>
         <span class="tag award">Accepted at 2024 INFORMS MSOM Conference</span>
       </li>
-      <li data-cat="seq">
+      <li data-type="applied" data-cat="seq">
         <a class="pub-title" href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7547078">"Target-based semi-amortized dynamic programming for complex crowd evacuation"</a>
         <span class="pub-authors">(with Shijie Pan, Xudong Wu, Qixiu Cheng and Jiayu Chen),</span>
         <span class="pub-venue">under review, <em>Decision Analysis</em>, 2026.</span>
       </li>
-      <li data-cat="seq">
+      <li data-type="theory" data-cat="seq">
         <span class="pub-title">"A unified minimax framework for online non-convex long-term constrained optimization"</span>
         <span class="pub-authors">(with Shijie Pan and Jianyu Xu),</span>
         <span class="pub-venue">under review, <em>Journal of Artificial Intelligence Research</em>, 2026.</span>
         <a class="tag" href="https://arxiv.org/abs/2311.02426">Preprint</a>
       </li>
-      <li data-cat="om">
+      <li data-type="applied" data-cat="om">
         <a class="pub-title" href="https://arxiv.org/abs/2610.07926">"Target-aware network dismantling with limited budgets"</a>
         <span class="pub-authors">(with Jiaqi Song, Fei Jing, Xingqin Qi, Qingpeng Zhang),</span>
         <span class="pub-venue">under review, <em>Science Advances</em>, 2026.</span>
       </li>
-      <li data-cat="om">
+      <li data-type="applied" data-cat="om">
         <a class="pub-title" href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7210378">"Data-and-structure-driven transshipment policy in heterogeneous multi-retailer system"</a>
         <span class="pub-authors">(with Yaping Zhao, Yimo Yan, Weilei Feng, Linhui Fu, Yong-Hong Kuo and Zhen Li),</span>
         <span class="pub-venue">under major revision, <em>IISE Transactions</em>, 2026.</span>
       </li>
-      <li data-cat="seq">
+      <li data-type="theory" data-cat="seq">
         <a class="pub-title" href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5013140">"The role of mixed discounting in risk-averse sequential decision-making"</a>
         <span class="pub-authors">(with Erick Delage and Shanshan Wang),</span>
         <span class="pub-venue">R&amp;R, <em>Management Science</em>, 2026.</span>
       </li>
-      <li data-cat="risk">
+      <li data-type="theory" data-cat="risk">
         <a class="pub-title" href="https://arxiv.org/abs/2008.13309">"Efficiently computing the quasi-concave envelope with incomplete information"</a>
         <span class="pub-authors">(with Jian Wu, William B. Haskell and Huifu Xu),</span>
         <span class="pub-venue">under 3rd round review, <em>SIAM Journal on Optimization</em>, 2026.</span>
       </li>
-      <li data-cat="risk">
+      <li data-type="theory" data-cat="risk">
         <a class="pub-title" href="https://www.sciencedirect.com/science/article/pii/S0167637726001410">"Robust assortment optimization under nested logit model"</a>
         <span class="pub-authors">(with Yicheng Liu and Zizhuo Wang),</span>
         <span class="pub-venue"><em>Operations Research Letters</em>, 2026.</span>
       </li>
-      <li data-cat="risk">
+      <li data-type="applied" data-cat="risk">
         <a class="pub-title" href="https://www.sciencedirect.com/science/article/pii/S0305048326001623">"Adjustable robust disassembly planning and dynamic capacity expansion for reverse supply chain network"</a>
         <span class="pub-authors">(with Yao Gao and Xinbao Liu),</span>
         <span class="pub-venue"><em>OMEGA-International Journal of Management Science</em>, 2026.</span>
         <a class="tag" href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5270969">Preprint</a>
       </li>
-      <li data-cat="risk">
+      <li data-type="theory" data-cat="risk">
         <a class="pub-title" href="https://pubsonline.informs.org/doi/10.1287/ijoc.2025.1570">"Robust data-driven quasi-concave optimization"</a>
         <span class="pub-authors">(with Jian Wu, William B. Haskell and Huifu Xu),</span>
         <span class="pub-venue"><em>INFORMS Journal on Computing</em>, 2026.</span>
         <a class="tag" href="https://arxiv.org/abs/2508.19787">Preprint</a><a class="tag" href="https://github.com/INFORMSJoC/2025.1570">Code</a>
       </li>
-      <li data-cat="risk">
+      <li data-type="theory" data-cat="risk">
         <a class="pub-title" href="https://www.sciencedirect.com/science/article/pii/S0377221726002808">"Assortment planning under spectral risk measures"</a>
         <span class="pub-authors">(with Junjie Lei and Zizhuo Wang),</span>
         <span class="pub-venue"><em>European Journal of Operational Research</em>, 2026.</span>
         <a class="tag" href="https://ars.els-cdn.com/content/image/1-s2.0-S0377221726002808-mmc1.pdf">Supplemental Materials</a><a class="tag" href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4826377">Preprint</a>
       </li>
-      <li data-cat="seq">
+      <li data-type="applied" data-cat="seq">
         <a class="pub-title" href="https://www.sciopen.com/article/10.26599/COMMTR.2026.9640067">"SAFE-AD: Socially-aware field-enhanced reinforcement learning for autonomous driving in interactive traffic"</a>
         <span class="pub-authors">(with Zian Wang, Zejian Deng, Yiming Shu, Jiahui Xu, Yong Wang, Shen Li, Dongpu Cao, Chen Sun),</span>
         <span class="pub-venue"><em>Communications in Transportation Research</em>, 2026.</span>
         <a class="tag" href="https://github.com/SAS-HKU/SAFE-AD">Replication package</a>
       </li>
-      <li data-cat="om">
+      <li data-type="applied" data-cat="om">
         <span class="pub-title">"Dynamic order scheduling and multi-energy coordination: a greedy-serial MAPPO approach"</span>
         <span class="pub-authors">(with Yaping Zhao, Weilei Feng, Jiarong Li, Likun Jia, Jingsi Huang),</span>
         <span class="pub-venue"><em>ENGINEERING Management</em>, 2026.</span>
       </li>
-      <li data-cat="om">
+      <li data-type="applied" data-cat="om">
         <a class="pub-title" href="https://www.sciencedirect.com/science/article/pii/S1366554525000924">"Towards cyber-physical internet: A systematic review, fundamental model and future perspectives"</a>
         <span class="pub-authors">(with Hang Wu, Ming Li, Chenglin Yu, Zhiyuan Ouyang, Kee-hung Lai, Zhiheng Zhao, Shenle Pan, Shuaian Wang, Ray Y. Zhong, Yong-Hong Kuo, Fangni Zhang, Zuo-Jun Max Shen, Eric Ballot and George Q. Huang),</span>
         <span class="pub-venue"><em>Transportation Research Part E: Logistics and Transportation Review</em>, 2025.</span>
       </li>
-      <li data-cat="om">
+      <li data-type="applied" data-cat="om">
         <a class="pub-title" href="https://www.tandfonline.com/doi/full/10.1080/24725854.2022.2068087">"Online non-convex learning for river pollution source identification"</a>
         <span class="pub-authors">(with Jing Jiang and Xiao Liu),</span>
         <span class="pub-venue"><em>IISE Transactions</em>, 2023.</span>
         <a class="tag" href="https://www.tandfonline.com/doi/suppl/10.1080/24725854.2022.2068087/suppl_file/uiie_a_2068087_sm2768.pdf">Supplemental Materials</a><a class="tag" href="https://arxiv.org/pdf/2005.11065.pdf">Preprint</a>
       </li>
-      <li data-cat="risk">
+      <li data-type="theory" data-cat="risk">
         <a class="pub-title" href="https://epubs.siam.org/doi/10.1137/20M1316524">"Preference robust optimization for choice functions on the space of CDFs"</a>
         <span class="pub-authors">(with William B. Haskell and Huifu Xu),</span>
         <span class="pub-venue"><em>SIAM Journal on Optimization</em>, 2022.</span>
         <a class="tag" href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4004387">Preprint</a>
       </li>
-      <li data-cat="om">
+      <li data-type="applied" data-cat="om">
         <a class="pub-title" href="https://www.sciencedirect.com/science/article/abs/pii/S0360544222006399?via%3Dihub">"Profit model for electric vehicle rental service: Sensitive analysis and differential pricing strategy"</a>
         <span class="pub-authors">(with Rui Miao, Peng Guo, Qi Li and Bo Zhang),</span>
         <span class="pub-venue"><em>Energy</em>, 2022.</span>
       </li>
-      <li data-cat="seq">
+      <li data-type="theory" data-cat="seq">
         <a class="pub-title" href="https://ieeexplore.ieee.org/document/9076320">"Stochastic approximation for risk-aware Markov decision processes"</a>
         <span class="pub-authors">(with William B. Haskell),</span>
         <span class="pub-venue"><em>IEEE Transactions on Automatic Control</em>, 2020.</span>
         <a class="tag" href="https://arxiv.org/pdf/1805.04238.pdf">Supplemental Materials</a>
         <a class="tag award" href="https://www.control.eng.osaka-cu.ac.jp/miscellaneous/css-tc-des/CSS-DES-202103.pdf">Featured publication selected by IEEE CSS-DES Newsletter</a>
       </li>
-      <li data-cat="om">
+      <li data-type="applied" data-cat="om">
         <a class="pub-title" href="https://ieeexplore.ieee.org/document/8978690">"Profit optimization for milage-based pricing of electric vehicle lease"</a>
         <span class="pub-authors">(with Rui Miao, Qi Li, Peng Guo, Leiyu Mi, Zhiqi Zhang, Jie Zhang and Zhibin Jiang),</span>
         <span class="pub-venue"><em>IEEE Transactions on Engineering Management</em>, 2020.</span>
       </li>
-      <li data-cat="risk">
+      <li data-type="theory" data-cat="risk">
         <a class="pub-title" href="https://www.tandfonline.com/doi/abs/10.1080/01605682.2019.1599779?journalCode=tjor20">"Data-driven satisficing measure and ranking"</a><span class="pub-authors">,</span>
         <span class="pub-venue"><em>Journal of the Operational Research Society</em>, 2019.</span>
         <a class="tag" href="https://arxiv.org/pdf/1807.00325.pdf">Preprint</a>
       </li>
-      <li data-cat="om">
+      <li data-type="applied" data-cat="om">
         <a class="pub-title" href="https://www.sciencedirect.com/science/article/abs/pii/S0198971517301539">"System resilience assessment method of urban lifeline system for GIS"</a>
         <span class="pub-authors">(with Mengzhi Ling),</span>
         <span class="pub-venue"><em>Computers, Environment and Urban Systems</em>, 2018.</span>
@@ -227,37 +232,37 @@
   <section data-section>
     <h3>Conference Proceedings</h3>
     <ol class="pubs">
-      <li data-cat="risk">
+      <li data-type="theory" data-cat="risk">
         <span class="pub-title">"Large-scale non-parametric preference learning via risk comparisons"</span>
         <span class="pub-authors">(with Fei He, Kai Tu and Man-Chung Yue),</span>
         <span class="pub-venue">under review, <em>IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP)</em>, 2026.</span>
       </li>
-      <li data-cat="seq">
+      <li data-type="theory" data-cat="seq">
         <a class="pub-title" href="https://proceedings.mlr.press/v337/wu26e.html">"DRL-ORA: Distributional reinforcement learning with online epistemic risk adaptation"</a>
         <span class="pub-authors">(with Yupeng Wu, Wenyun Li and Chin Pang Ho),</span>
         <span class="pub-venue"><em>Conference on Uncertainty in Artificial Intelligence (UAI)</em>, 2026.</span>
         <span class="tag award">acceptance rate: 30.5%</span>
       </li>
-      <li data-cat="seq">
+      <li data-type="theory" data-cat="seq">
         <a class="pub-title" href="https://ieeexplore.ieee.org/document/11623900/">"Generalizable trajectory prediction via inverse reinforcement learning with Mamba-Graph architecture"</a>
         <span class="pub-authors">(with Wenyun Li, Zejian Deng and Chen Sun),</span>
         <span class="pub-venue"><em>IEEE Intelligent Vehicles Symposium (IV)</em>, 2026.</span>
         <span class="tag award">oral presentation, acceptance rate: 8.5%</span>
       </li>
-      <li data-cat="om">
+      <li data-type="applied" data-cat="om">
         <a class="pub-title" href="https://ieeexplore.ieee.org/document/11164090">"Data-driven inventory management for new products: An adjusted Dyna-Q approach with transfer learning"</a>
         <span class="pub-authors">(with Xinye Qu and Longxiao Liu),</span>
         <span class="pub-venue"><em>IEEE International Conference on Automation Science and Engineering (CASE)</em>, 2025.</span>
         <a class="tag award" href="https://2025.ieeecase.org/awards/">Finalist, 2025 IEEE CASE Best Application Paper Award</a>
       </li>
-      <li data-cat="seq">
+      <li data-type="theory" data-cat="seq">
         <a class="pub-title" href="https://ojs.aaai.org/index.php/AAAI/article/view/5574">"Model and reinforcement learning for Markov games with risk preferences"</a>
         <span class="pub-authors">(with Viet Hai Pham and William B. Haskell),</span>
         <span class="pub-venue"><em>AAAI Conference on Artificial Intelligence (AAAI)</em>, 2020.</span>
         <a class="tag" href="https://arxiv.org/pdf/1901.04882.pdf">Supplemental Materials</a>
         <span class="tag award">acceptance rate: 20.6%</span>
       </li>
-      <li data-cat="seq">
+      <li data-type="theory" data-cat="seq">
         <a class="pub-title" href="https://ieeexplore.ieee.org/document/8264388">"Risk-aware Q-learning for Markov decision processes"</a>
         <span class="pub-authors">(with William B. Haskell),</span>
         <span class="pub-venue"><em>IEEE Conference on Decision and Control (CDC)</em>, 2017.</span>
@@ -268,68 +273,68 @@
   <section data-section>
     <h3>Work-in-Progress</h3>
     <ol class="pubs">
-      <li data-cat="om">
+      <li data-type="applied" data-cat="om">
         <span class="pub-title">"Forecast-to-control interfaces for critical spare-parts inventory management"</span>
         <span class="pub-authors">(with Mingyuan Zhu, Ginger Y. Ke, Shan Dai, Xiaoqiang Cai and Lianmin Zhang),</span>
         <span class="pub-venue">to be submitted to <em>Production and Operations Management</em>, 2026.</span>
       </li>
-      <li data-cat="seq">
+      <li data-type="theory" data-cat="seq">
         <span class="pub-title">"Fast convergent risk-aware reinforcement learning"</span>
         <span class="pub-authors">(with Junjie Lei, Dionysios Kalogerias and Zuo-Jun Max Shen),</span>
         <span class="pub-venue">to be submitted to <em>Journal of Machine Learning Research</em>, 2026.</span>
       </li>
-      <li data-cat="risk">
+      <li data-type="theory" data-cat="risk">
         <span class="pub-title">"Beyond homoscedastic noise: Adaptive square root principal component pursuit"</span>
         <span class="pub-authors">(with Hao Yin),</span>
         <span class="pub-venue">to be submitted to <em>INFORMS Journal on Computing</em>, 2026.</span>
       </li>
-      <li data-cat="risk">
+      <li data-type="theory" data-cat="risk">
         <span class="pub-title">"Learning where to evaluate: Robust quasiconcave optimization with noisy and actively collected data"</span>
         <span class="pub-authors">(with Hao Yin and Qiuzhuang Sun),</span>
         <span class="pub-venue">to be submitted to <em>INFORMS Journal on Computing</em>, 2026.</span>
       </li>
-      <li data-cat="risk">
+      <li data-type="theory" data-cat="risk">
         <span class="pub-title">"The impact of sampling and systematic risk on assortment planning"</span>
         <span class="pub-authors">(with Hao Yin, Youxin Wang and Junjie Lei),</span>
         <span class="pub-venue">to be submitted to <em>Naval Research Logistics</em>, 2026.</span>
       </li>
-      <li data-cat="risk">
+      <li data-type="theory" data-cat="risk">
         <span class="pub-title">"Joint preference estimation and robust optimization"</span>
         <span class="pub-authors">(with Junjie Lei, Yanyu Lu, Erick Delage and Zuo-Jun Max Shen),</span>
         <span class="pub-venue">to be submitted to <em>International Conference on Machine Learning (ICML)</em>, 2027.</span>
       </li>
-      <li data-cat="seq">
+      <li data-type="theory" data-cat="seq">
         <span class="pub-title">"Joint risk and time preference elicitation in inverse reinforcement learning"</span>
         <span class="pub-authors">(with Jiaming Lyu and Leon Zehao Jiang),</span>
         <span class="pub-venue">to be submitted to <em>International Joint Conference on Artificial Intelligence (IJCAI)</em>, 2027.</span>
       </li>
-      <li data-cat="risk">
+      <li data-type="applied" data-cat="risk">
         <span class="pub-title">"Online joint pricing and capacity allocation under risk-aware retailer"</span>
         <span class="pub-authors">(with Youxin Wang),</span>
         <span class="pub-venue">to be submitted to <em>European Journal of Operational Research</em>, 2027.</span>
       </li>
-      <li data-cat="risk">
+      <li data-type="applied" data-cat="risk">
         <span class="pub-title">"Dynamic vehicle-battery rebalancing in shared electric micromobility systems: An adaptive distributionally robust target-based approach"</span>
         <span class="pub-authors">(with Zhuojun Liu, Zheng Cui and Lianmin Zhang),</span>
         <span class="pub-venue">to be submitted to <em>Transportation Research Part B: Methodological</em>, 2027.</span>
       </li>
-      <li data-cat="risk">
+      <li data-type="theory" data-cat="risk">
         <span class="pub-title">"Contextual and active preference robust optimization"</span>
         <span class="pub-authors">(with Erick Delage and Zuo-Jun Max Shen).</span>
       </li>
-      <li data-cat="risk">
+      <li data-type="theory" data-cat="risk">
         <span class="pub-title">"Decision preservation under entropic aggregation of target-calibrated robust losses"</span>
         <span class="pub-authors">(with Lianming Zhang).</span>
       </li>
-      <li data-cat="seq">
+      <li data-type="theory" data-cat="seq">
         <a class="pub-title" href="https://arxiv.org/abs/2608.04305">"Adaptive finite-budget training for CVaR risk-aware Q-learning"</a>
         <span class="pub-authors">(with Yifan Wu and Junjie Lei).</span>
       </li>
-      <li data-cat="seq">
+      <li data-type="theory" data-cat="seq">
         <span class="pub-title">"Exploiting transitivity structure in online ranking via pairwise comparisons"</span>
         <span class="pub-authors">(with Ethan Hao Feng Lam, Alec Kirkley and Sebastian Morel-Balbi).</span>
       </li>
-      <li data-cat="seq">
+      <li data-type="theory" data-cat="seq">
         <span class="pub-title">"Sharp prophet inequalities for multi-unit selection with geometric discounting"</span>
         <span class="pub-authors">(with Yicheng Liu and Leon Zehao Jiang).</span>
       </li>
@@ -412,7 +417,7 @@
   </div>
 </footer>
 
-<script src="assets/main.js?v=20261119f"></script>
+<script src="assets/main.js?v=20261120a"></script>
 <script async src="https://events.vercount.one/js"></script>
 </body>
 </html>
