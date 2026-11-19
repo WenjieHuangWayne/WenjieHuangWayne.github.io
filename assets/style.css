@@ -170,6 +170,7 @@ p { margin: 0 0 14px; }
 .callout p:last-child { margin-bottom: 0; }
 
 /* ---------- Publication list ---------- */
+.pub-note { color: var(--muted); font-size: 14.5px; margin: -6px 0 16px; }
 .pub-tools {
   display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
   margin: 0 0 18px;
