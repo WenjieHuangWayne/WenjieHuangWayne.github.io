@@ -52,7 +52,7 @@ body {
 a { color: var(--link); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
-.wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+.wrap { max-width: var(--maxw); margin: 0 auto; padding-left: 24px; padding-right: 24px; }
 
 /* ---------- Skip link ---------- */
 .skip {
