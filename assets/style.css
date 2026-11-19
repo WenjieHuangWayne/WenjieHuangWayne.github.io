@@ -183,7 +183,6 @@ p { margin: 0 0 14px; }
 }
 .pub-search:focus { outline: 2px solid var(--accent-soft); border-color: var(--accent); }
 .filters { display: flex; flex-wrap: wrap; gap: 8px; }
-.filters-type { padding-left: 12px; border-left: 1px solid var(--border); }
 .pubs .pub-why {
   display: none;
   color: var(--muted);
