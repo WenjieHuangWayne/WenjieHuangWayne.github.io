@@ -67,6 +67,21 @@
     });
   })();
 
+  /* ---------- Selected Works expandable summaries (Home) ---------- */
+  (function () {
+    var toggles = Array.prototype.slice.call(document.querySelectorAll(".pub-toggle"));
+    if (!toggles.length) return;
+    toggles.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var li = btn.closest ? btn.closest("li") : btn.parentNode;
+        if (!li) return;
+        var open = li.classList.toggle("open");
+        btn.setAttribute("aria-expanded", open ? "true" : "false");
+        btn.setAttribute("aria-label", open ? "Hide summary" : "Show summary");
+      });
+    });
+  })();
+
   /* ---------- Publication filter / search ---------- */
   var search = document.getElementById("pub-search");
   var chips = Array.prototype.slice.call(document.querySelectorAll(".chip[data-filter]"));

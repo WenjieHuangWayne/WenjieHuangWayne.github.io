@@ -185,12 +185,21 @@ p { margin: 0 0 14px; }
 .filters { display: flex; flex-wrap: wrap; gap: 8px; }
 .filters-type { padding-left: 12px; border-left: 1px solid var(--border); }
 .pubs .pub-why {
-  display: block;
+  display: none;
   color: var(--muted);
   font-size: 14.5px;
   margin-top: 3px;
   line-height: 1.5;
 }
+ol.pubs > li.open .pub-why { display: block; }
+.pub-toggle {
+  background: none; border: 0; cursor: pointer;
+  color: var(--muted); padding: 2px 5px; line-height: 1;
+  vertical-align: baseline; font-family: inherit;
+}
+.pub-toggle svg { width: 10px; height: 10px; transition: transform .15s ease; }
+ol.pubs > li.open .pub-toggle svg { transform: rotate(90deg); }
+.pub-toggle:hover { color: var(--text); }
 .chip {
   font-size: 13.5px; padding: 6px 13px; border-radius: 999px; cursor: pointer;
   border: 1px solid var(--border); background: var(--surface); color: var(--muted);
