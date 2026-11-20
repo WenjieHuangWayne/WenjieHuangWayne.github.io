@@ -176,7 +176,7 @@ p { margin: 0 0 14px; }
   margin: 0 0 18px;
 }
 .pub-search {
-  flex: 1 1 220px; min-width: 180px;
+  flex: 1 1 100%;
   padding: 9px 13px; font-size: 14.5px; font-family: inherit;
   border: 1px solid var(--border); border-radius: 8px;
   background: var(--bg); color: var(--text);
