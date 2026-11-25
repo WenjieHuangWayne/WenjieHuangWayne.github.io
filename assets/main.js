@@ -104,10 +104,12 @@
 
     var visible = 0;
     items.forEach(function (li) {
+      // entries without theme/type tags (e.g. theses) are exempt from filtering
+      var untagged = !li.hasAttribute("data-cat") && !li.hasAttribute("data-type");
       var okCat = cat === "all" || li.getAttribute("data-cat") === cat;
       var okType = type === "any" || li.getAttribute("data-type") === type;
       var okQ = !q || norm(li.textContent).indexOf(q) !== -1;
-      var show = okCat && okType && okQ;
+      var show = untagged || (okCat && okType && okQ);
       li.style.display = show ? "" : "none";
       if (show) visible++;
     });
